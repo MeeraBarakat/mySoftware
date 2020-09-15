@@ -12,16 +12,10 @@ public class CheckoutSteps {
 	private int FirstPrise=0;
 	private int SecondPrise=0;
 	private Checkout check=new Checkout();
-	private String first;
-	private int i=0;
 @Given ("the price of a {string} is {int}")
 public void thePriceOf(String Grocery,Integer GroceryPrice)
-{      if(i==0)
-	{  
-	    first=Grocery;
-	    i++;
-	}
-if (Grocery.equals(first))
+{    
+if (Grocery.equals("banana"))
 	FirstPrise=GroceryPrice;
 else SecondPrise=GroceryPrice;
 }
@@ -29,7 +23,7 @@ else SecondPrise=GroceryPrice;
 @When("I checkout {int} {string}")
 public void Icheckout(Integer NumOfGrocery,String Grocery)
 {
-	if (Grocery.equals(first))
+	if (Grocery.equals("banana"))
 	check.add(NumOfGrocery,FirstPrise);
 	else check.add(NumOfGrocery,SecondPrise);
 }
