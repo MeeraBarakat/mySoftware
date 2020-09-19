@@ -25,16 +25,14 @@ public void thePriceOf(String Grocery,Integer GroceryPrice)
 @When("I checkout {int} {string}")
 public void Icheckout(Integer NumbOfGrocery,String Grocery)
 {
-	int price = 0;
 	for(int i=0;i<myAL.size();i++)
 	{
 		myGro m=myAL.get(i);
 		if(m.getName().equals(Grocery))
 		{
-			price=m.getPrice();
+			check.add(NumbOfGrocery,m.getPrice());
 		}
 	}
-	check.add(NumbOfGrocery,price);
 }
 
 @Then("the total price should be {int}")
