@@ -39,7 +39,7 @@ public void Icheckout(Integer NumbOfGrocery,String Grocery)
 public void totalPrice(Integer TheTotal)
 {
 	assertEquals(TheTotal.intValue(),check.result());
-	myAL.isEmpty();
+	myAL.clear();
 }
 
 
